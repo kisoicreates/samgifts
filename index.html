@@ -1,0 +1,3269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SamGifts – Give Moments, Not Just Things</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR =====================
+       ✅ STICKY: The navbar is fixed to the top of the screen at all
+          times on ALL devices. It never scrolls away.
+          JS adds a ".scrolled" class for a stronger shadow on scroll.
+
+       ══════════════════════════════════════════════════════
+       HOW TO ADD YOUR OWN LOGO IMAGE — 3 easy steps:
+       ══════════════════════════════════════════════════════
+
+       STEP 1 ─ Copy your logo file into the project folder.
+                Best format: PNG with transparent background.
+                Recommended height: 36–44 px (any width is fine).
+                Example filename: logo.png
+
+       STEP 2 ─ In the logo area below, find the line:
+                  <img src="logo.png" …  style="display:none">
+                Remove the   style="display:none"   part so it reads:
+                  <img src="logo.png" alt="SamGifts Logo" class="logo-img" />
+                Then change "logo.png" to your actual filename if different.
+
+       STEP 3 ─ Hide the fallback icon and text by adding
+                style="display:none" to BOTH spans below the img tag:
+                  <span class="logo-icon" style="display:none">…</span>
+                  <span class="logo-text" style="display:none">…</span>
+
+       That's it! Save and refresh. Your logo will appear in the navbar.
+       ══════════════════════════════════════════════════════ -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="nav-container">
+
+      <!-- ── LOGO AREA ──────────────────────────────────────────────
+           🔲 Option A — YOUR LOGO IMAGE (step 2 above: remove style="display:none")
+           🔶 Option B — Default icon + text (works out of the box, no changes needed)
+           ──────────────────────────────────────────────────────────── -->
+      <a href="#home" class="nav-logo" aria-label="SamGifts Home">
+
+        <!-- ✏️  YOUR LOGO: change src to your file, then remove style="display:none" -->
+        <img src="images/sam_gifts_logo_enhanced_fullres.png" alt="SamGifts Logo" class="logo-img" />
+
+        <!-- 🔶 DEFAULT fallback — hide both spans once your image is set (Step 3) -->
+        <span class="logo-text">Sam<strong>Gifts</strong></span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#products">Shop</a>
+        <a href="#footer">Contact</a>
+      </nav>
+
+      <!-- Search Bar (desktop) -->
+      <div class="nav-search" role="search">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="search" id="searchInput" placeholder="Search gifts…"
+               aria-label="Search products" autocomplete="off" />
+      </div>
+
+      <!-- Cart & Hamburger -->
+      <div class="nav-actions">
+        <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="#home" class="mobile-link">Home</a>
+      <a href="#categories" class="mobile-link">Categories</a>
+      <a href="#products" class="mobile-link">Shop</a>
+      <a href="#footer" class="mobile-link">Contact</a>
+      <div class="mobile-search" role="search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" id="mobileSearchInput" placeholder="Search gifts…"
+               aria-label="Search products mobile" autocomplete="off" />
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home" aria-label="Hero banner">
+    <div class="hero-bg-shapes" aria-hidden="true">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="hero-content">
+      <span class="hero-badge"><i class="fa-solid fa-sparkles"></i> Handpicked with love</span>
+      <h1 class="hero-title">Give Moments,<br/><em>Not Just Things.</em></h1>
+      <p class="hero-subtitle">Discover thoughtful gifts for every celebration — from birthdays to weddings, and everything in between.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary">
+          <i class="fa-solid fa-bag-shopping"></i> Shop Now
+        </a>
+        <a href="#categories" class="btn btn-outline">Browse Categories</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>500+</strong><span>Gifts</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>98%</strong><span>Happy Customers</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>Fast</strong><span>Delivery</span></div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-card floating">
+        <div class="hero-gift-icon"><i class="fa-solid fa-gift"></i></div>
+        <span>Birthday Box</span>
+      </div>
+      <div class="hero-card floating delay-1">
+        <div class="hero-gift-icon hearts"><i class="fa-solid fa-heart"></i></div>
+        <span>Valentine Set</span>
+      </div>
+      <div class="hero-card floating delay-2">
+        <div class="hero-gift-icon star"><i class="fa-solid fa-star"></i></div>
+        <span>Premium Gift</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CATEGORIES ===================== -->
+  <section class="categories-section" id="categories" aria-label="Gift categories">
+    <div class="section-header">
+      <span class="section-tag">Browse by Occasion</span>
+      <h2>Find the Perfect Gift</h2>
+      <p>Every celebration deserves something special.</p>
+    </div>
+    <div class="categories-grid">
+      <div class="cat-card" data-category="birthday" role="button" tabindex="0" aria-label="Birthday Gifts">
+        <div class="cat-icon" style="background:linear-gradient(135deg,#ff6b35,#f7c59f)">
+          <i class="fa-solid fa-cake-candles"></i>
+        </div>
+        <span>Birthday Gifts</span>
+      </div>
+      <div class="cat-card" data-category="wedding" role="button" tabindex="0" aria-label="Wedding Gifts">
+        <div class="cat-icon" style="background:linear-gradient(135deg,#e91e8c,#f9a8d4)">
+          <i class="fa-solid fa-ring"></i>
+        </div>
+        <span>Wedding Gifts</span>
+      </div>
+      <div class="cat-card" data-category="valentine" role="button" tabindex="0" aria-label="Valentine Gifts">
+        <div class="cat-icon" style="background:linear-gradient(135deg,#e53935,#ef9a9a)">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+        <span>Valentine Gifts</span>
+      </div>
+      <div class="cat-card" data-category="corporate" role="button" tabindex="0" aria-label="Corporate Gifts">
+        <div class="cat-icon" style="background:linear-gradient(135deg,#1565c0,#90caf9)">
+          <i class="fa-solid fa-briefcase"></i>
+        </div>
+        <span>Corporate Gifts</span>
+      </div>
+      <div class="cat-card" data-category="baby" role="button" tabindex="0" aria-label="Baby Shower Gifts">
+        <div class="cat-icon" style="background:linear-gradient(135deg,#6a1b9a,#ce93d8)">
+          <i class="fa-solid fa-baby-carriage"></i>
+        </div>
+        <span>Baby Shower Gifts</span>
+      </div>
+      <div class="cat-card" data-category="graduation" role="button" tabindex="0" aria-label="Graduation Gifts">
+        <div class="cat-icon" style="background:linear-gradient(135deg,#2e7d32,#a5d6a7)">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <span>Graduation Gifts</span>
+      </div>
+      <div class="cat-card" data-category="christmas" role="button" tabindex="0" aria-label="Christmas Gifts">
+        <div class="cat-icon" style="background:linear-gradient(135deg,#b71c1c,#ef9a9a)">
+          <i class="fa-solid fa-tree"></i>
+        </div>
+        <span>Christmas Gifts</span>
+      </div>
+      <div class="cat-card" data-category="thankyou" role="button" tabindex="0" aria-label="Thank You Gifts">
+        <div class="cat-icon" style="background:linear-gradient(135deg,#e65100,#ffcc80)">
+          <i class="fa-solid fa-handshake"></i>
+        </div>
+        <span>Thank You Gifts</span>
+      </div>
+      <div class="cat-card" data-category="ladies" role="button" tabindex="0" aria-label="Ladies Gifts">
+        <div class="cat-icon" style="background:linear-gradient(135deg,#fd03ae,#ff0077)">
+          <i class="fa-solid fa-person-dress"></i>
+        </div>
+        <span>Ladies Gifts</span>
+      </div>
+      <div class="cat-card" data-category="men" role="button" tabindex="0" aria-label="Men Gifts">
+        <div class="cat-icon" style="background:linear-gradient(135deg,#10101027,#000000)">
+          <i class="fa-solid fa-person"></i>
+        </div>
+        <span>Men Gifts</span>
+      </div>
+      <div class="cat-card" data-category="anniversary" role="button" tabindex="0" aria-label="Anniversaryw Gifts">
+        <div class="cat-icon" style="background:linear-gradient(135deg,#1b9a7c,#ce93d8)">
+          <i class="fa-solid fa-champagne-glasses"></i>
+        </div>
+        <span>Anniversary Gifts</span>
+      </div>
+      <div class="cat-card" data-category="retirement" role="button" tabindex="0" aria-label="Retirement Gifts">
+        <div class="cat-icon" style="background:linear-gradient(135deg,#5a2e54,#4102ff)">
+          <i class="fa-solid fa-house"></i>
+        </div>
+        <span>Retirement Gifts</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+  ===================== PRODUCTS SECTION =====================
+  ════════════════════════════════════════════════════════════════
+
+  📦 HOW TO ADD A NEW PRODUCT — Full Beginner's Guide
+  ════════════════════════════════════════════════════════════════
+
+  STEP 1 ─ Add your product image
+  ──────────────────────────────────
+  • Inside your project folder, create a sub-folder called:  images/
+  • Copy your product photo into it.
+    Example result:  images/product13.jpg
+  • Recommended: JPG or PNG, landscape ratio, around 800×600 px.
+  • If no image is found the card auto-shows a coloured placeholder.
+
+  STEP 2 ─ Copy the template below & paste it inside
+             <div class="products-grid" id="productsGrid">
+             just ABOVE the line that says "PASTE NEW PRODUCTS ABOVE"
+  ──────────────────────────────────────────────────────────────────
+
+  <article class="product-card"
+           data-name="your product name in lowercase"
+           data-category="CATEGORY_SLUG"
+           data-price="PRICE_AS_NUMBER"
+           data-whatsapp-name="Your Product Name">
+    <div class="product-img-wrap">
+      <img src="images/your-image.jpg" alt="Your Product Name" loading="lazy"
+           onerror="this.src='https://placehold.co/400x300/ff6b35/ffffff?text=Gift'" />
+      <span class="product-badge">Bestseller</span>
+    </div>
+    <div class="product-info">
+      <p class="category-tag"><i class="fa-solid fa-gift"></i> Category Name</p>
+      <h3>Your Product Name</h3>
+      <p class="price">KES 0,000</p>
+      <div class="product-actions">
+        <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+          <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+        </button>
+        <button class="btn-whatsapp" onclick="orderOnWhatsApp('Your Product Name', 0000)" aria-label="Order on WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </button>
+      </div>
+    </div>
+  </article>
+
+  STEP 3 ─ Fill in these 8 things:
+  ──────────────────────────────────────────────────────────────────
+
+  1. data-name          → Product name in ALL LOWERCASE (used for live search)
+                          e.g.  data-name="chocolate birthday hamper"
+
+  2. data-category      → Must exactly match one of these slugs:
+                            birthday | wedding | valentine | corporate |
+                            baby | graduation | christmas | thankyou
+
+  3. data-price         → Price as a plain number — no KES, no comma, no space
+                          e.g.  data-price="3500"
+
+  4. data-whatsapp-name → Name sent in the WhatsApp message (normal capitalisation)
+                          e.g.  data-whatsapp-name="Chocolate Birthday Hamper"
+
+  5. img src            → Path to your image file
+                          e.g.  src="images/product13.jpg"
+
+  6. img onerror        → Backup placeholder if image is missing.
+                          Change the hex colour and label to match:
+                          e.g.  onerror="this.src='https://placehold.co/400x300/ff6b35/ffffff?text=🍫+Hamper'"
+
+  7. <span class="product-badge">  →  Text on the image badge.
+                          Use class="product-badge" for orange (default).
+                          Use class="product-badge new" for green.
+                          DELETE the whole <span> line to show no badge.
+
+  8. Category icon      →  Change the Font Awesome icon to match:
+                            birthday:   fa-cake-candles
+                            wedding:    fa-rings-wedding
+                            valentine:  fa-heart
+                            corporate:  fa-briefcase
+                            baby:       fa-baby-carriage
+                            graduation: fa-graduation-cap
+                            christmas:  fa-tree
+                            thankyou:   fa-hands-holding-heart
+
+  9. orderOnWhatsApp()  →  1st argument = product name (matches data-whatsapp-name)
+                            2nd argument = price number (matches data-price)
+                          e.g.  orderOnWhatsApp('Chocolate Birthday Hamper', 3500)
+
+  ── COMPLETE EXAMPLE ───────────────────────────────────────────────
+
+  <article class="product-card"
+           data-name="chocolate birthday hamper"
+           data-category="birthday"
+           data-price="3500"
+           data-whatsapp-name="Chocolate Birthday Hamper">
+    <div class="product-img-wrap">
+      <img src="images/product13.jpg" alt="Chocolate Birthday Hamper" loading="lazy"
+           onerror="this.src='https://placehold.co/400x300/ff6b35/ffffff?text=🍫+Hamper'" />
+      <span class="product-badge new">New</span>
+    </div>
+    <div class="product-info">
+      <p class="category-tag"><i class="fa-solid fa-cake-candles"></i> Birthday Gifts</p>
+      <h3>Chocolate Birthday Hamper</h3>
+      <p class="price">KES 3,500</p>
+      <div class="product-actions">
+        <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+          <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+        </button>
+        <button class="btn-whatsapp" onclick="orderOnWhatsApp('Chocolate Birthday Hamper', 3500)" aria-label="Order on WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </button>
+      </div>
+    </div>
+  </article>
+
+  ════════════════════════════════════════════════════════════════ -->
+  <section class="products-section" id="products" aria-label="Products">
+    <div class="section-header">
+      <span class="section-tag">Our Collection</span>
+      <h2>Featured Gifts</h2>
+      <p>Curated with care, delivered with love.</p>
+    </div>
+
+    <!-- Active Filter Banner -->
+    <div class="filter-bar" id="filterBar" style="display:none;">
+      <span>Showing: <strong id="activeFilter"></strong></span>
+      <button class="clear-filter" id="clearFilter" aria-label="Clear filter">
+        <i class="fa-solid fa-xmark"></i> Clear filter
+      </button>
+    </div>
+
+    <!-- No Results -->
+    <div class="no-results" id="noResults" style="display:none;" aria-live="polite">
+      <i class="fa-solid fa-box-open"></i>
+      <p>No gifts found. Try a different search.</p>
+    </div>
+
+    <div class="products-grid" id="productsGrid">
+
+      <!-- PRODUCT 1 -->
+      <article class="product-card"
+               data-name="Premium Men’s Bracelet"
+               data-category="birthday"
+               data-price="1,000"
+               data-whatsapp-name="Premium Men’s Bracelet">
+        <div class="product-img-wrap">
+          <img src="images/1.jpg" alt="Birthday Surprise Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/ff6b35/ffffff?text=🎂+Birthday+Box'" />
+          <span class="product-badge">Bestseller</span>
+        </div>
+        <div class="product-info">
+          <p class="category-tag"><i class="fa-solid fa-cake-candles"></i> Birthday Gifts</p>
+          <h3>Premium Men’s Bracelet</h3>
+          <p class="price">KES 1,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Birthday Surprise Box', 2500)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      
+
+      <!-- PRODUCT 3 -->
+      <article class="product-card"
+               data-name=" Customized Executive Gift Box Set"
+               data-category="Corporate Gifts"
+               data-price="3500"
+               data-whatsapp-name="Executive Gift Box Set">
+        <div class="product-img-wrap">
+          <img src="images/3.jpg" alt="Valentine Roses & Chocolates" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=❤️+Valentine+Set'" />
+        </div>
+        <div class="product-info">
+          <p class="category-tag"><i class="fa-solid fa-briefcase"></i> Corporate Gifts</p>
+          <h3>Customized Executive Gift Box Set</h3>
+          <p class="price">KES 3,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Valentine Roses & Chocolates', 3200)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- PRODUCT 4 -->
+      <article class="product-card"
+               data-name="Chocolate Flower Bouquet"
+               data-category="Valentine"
+               data-price="5500"
+               data-whatsapp-name="Chocolate Flower Bouquet">
+        <div class="product-img-wrap">
+          <img src="images/5.jpg" alt="Corporate Executive Gift Set" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/1565c0/ffffff?text=💼+Corporate+Set'" />
+          <span class="product-badge">Popular</span>
+        </div>
+        <div class="product-info">
+          <p class="category-tag"><i class="fa-solid fa-heart"></i> Valentine Gifts</p>
+          <h3>Chocolate Flower Bouquet</h3>
+          <p class="price">KES 5,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Corporate Executive Gift Set', 9500)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- PRODUCT 5 -->
+      <article class="product-card"
+               data-name="Instagram Acrylic Plaque"
+               data-category="corporate"
+               data-price="2500"
+               data-whatsapp-name="Instagram Acrylic Plaque">
+        <div class="product-img-wrap">
+          <img src="images/6.jpg" alt="Baby Shower Gift Bundle" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/6a1b9a/ffffff?text=🍼+Baby+Bundle'" />
+          <span class="product-badge new">New</span>
+        </div>
+        <div class="product-info">
+          <h3>Instagram Acrylic Plaque</h3>
+          <p class="price">KES 2,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Baby Shower Gift Bundle', 4500)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- PRODUCT 6 -->
+      <article class="product-card"
+               data-name="Personalized Corporate Set"
+               data-category="corporate"
+               data-price="3500"
+               data-whatsapp-name="Personalized Corporate Set">
+        <div class="product-img-wrap">
+          <img src="images/7.jpg" alt="Graduation Celebration Pack" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/2e7d32/ffffff?text=🎓+Graduation+Pack'" />
+        </div>
+        <div class="product-info">
+          <p class="category-tag"><i class="fa-solid fa-briefcase"></i> Corporate Gifts</p>
+          <h3>Personalized Corporate Set</h3>
+          <p class="price">KES 3,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Graduation Celebration Pack', 3800)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- PRODUCT 7 -->
+      <article class="product-card"
+               data-name="Customized Graphic T-Shirt"
+               data-category="men"
+               data-price="1250"
+               data-whatsapp-name="Graphic Oversized T-Shirt">
+        <div class="product-img-wrap">
+          <img src="images/8.jpg" alt="Christmas Deluxe Hamper" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/b71c1c/ffffff?text=🎄+Christmas+Hamper'" />
+        </div>
+        <div class="product-info">
+          <h3> Customized Graphic T-Shirt</h3>
+          <p class="price">KES 1,250</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Christmas Deluxe Hamper', 6500)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- PRODUCT 8 -->
+      <article class="product-card"
+               data-name="Custom Name Necklace"
+               data-category="ladies"
+               data-price="1350"
+               data-whatsapp-name="Custom Name Necklacet">
+        <div class="product-img-wrap">
+          <img src="images/9.jpg" alt="Thank You Floral Basket" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e65100/ffffff?text=🌸+Floral+Basket'" />
+        </div>
+        <div class="product-info">
+          <h3>Custom Name Necklace</h3>
+          <p class="price">KES 1,350</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Thank You Floral Basket', 2200)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- PRODUCT 9 -->
+      <article class="product-card"
+               data-name="Candy Snack Bouquet"
+               data-category="valentine"
+               data-price="4200"
+               data-whatsapp-name="Candy Snack Bouquet">
+        <div class="product-img-wrap">
+          <img src="images/10.jpg" alt="Premium Birthday Cake & Gifts" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/ff6b35/ffffff?text=🎁+Premium+Birthday'" />
+        </div>
+        <div class="product-info">
+          <p class="category-tag"><i class="fa-solid fa-heart"></i> Valentine Gifts</p>
+          <h3>Candy Snack Bouquet</h3>
+          <p class="price">KES 4,200</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Premium Birthday Cake & Gifts', 4200)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- PRODUCT 10 -->
+      <article class="product-card"
+               data-name="Engraved Bar Necklace"
+               data-category="valentine"
+               data-price="1500"
+               data-whatsapp-name="Engraved Bar Necklace">
+        <div class="product-img-wrap">
+          <img src="images/11.jpg" alt="Self Care Spa Gift Set" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e65100/ffffff?text=🧴+Spa+Gift+Set'" />
+          <span class="product-badge">Popular</span>
+        </div>
+        <div class="product-info">
+          <h3>Engraved Bar Necklace</h3>
+          <p class="price">KES 1,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Self Care Spa Gift Set', 3500)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- PRODUCT 11 -->
+      <article class="product-card"
+               data-name="Floral Resin LOVE Lamp"
+               data-category="ladies"
+               data-price="3500"
+               data-whatsapp-name="Floral Resin LOVE Lamp">
+        <div class="product-img-wrap">
+          <img src="images/13.jpg" alt="Mini Grad Survival Kit" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/2e7d32/ffffff?text=🎓+Survival+Kit'" />
+        </div>
+        <div class="product-info">
+          <h3>Floral Resin LOVE Lamp</h3>
+          <p class="price">KES 3,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Mini Grad Survival Kit', 1900)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- PRODUCT 12 -->
+      <article class="product-card"
+               data-name="Wooden Stationery Gift Set"
+               data-category="corporate"
+               data-price="2500"
+               data-whatsapp-name="Wooden Stationery Gift Set">
+        <div class="product-img-wrap">
+          <img src="images/14.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Wooden Stationery Gift Set</h3>
+          <p class="price">KES 2,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Magic Mug"
+               data-category="thankyou"
+               data-price="1250"
+               data-whatsapp-name="Magic Mug">
+        <div class="product-img-wrap">
+          <img src="images/15.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Magic Mug</h3>
+          <p class="price">KES 1,250</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Best Wife Ever Mug"
+               data-category="valentine"
+               data-price="850"
+               data-whatsapp-name="Classic Black Ceramic Mug">
+        <div class="product-img-wrap">
+          <img src="images/16.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Best Wife Ever Mug</h3>
+          <p class="price">KES 850</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Leather Journal & Pen Gift Set"
+               data-category="corporate"
+               data-price="3500"
+               data-whatsapp-name="Leather Journal & Pen Gift Set">
+        <div class="product-img-wrap">
+          <img src="images/17.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Leather Journal & Pen Gift Set</h3>
+          <p class="price">KES 3,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Custom Acrylic Party Menu Board"
+               data-category="corporate"
+               data-price="3500"
+               data-whatsapp-name="Custom Acrylic Party Menu Board">
+        <div class="product-img-wrap">
+          <img src="images/18.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Custom Acrylic Party Menu Board</h3>
+          <p class="price">KES 3,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="KitKat Explosion Gift Box"
+               data-category="valentine"
+               data-price="7500"
+               data-whatsapp-name="KitKat Explosion Gift Box">
+        <div class="product-img-wrap">
+          <img src="images/19.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>KitKat Explosion Gift Box</h3>
+          <p class="price">KES 7,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Hexagon Social Media QR Stand"
+               data-category="corporate"
+               data-price="2500"
+               data-whatsapp-name="Hexagon Social Media QR Stand">
+        <div class="product-img-wrap">
+          <img src="images/20.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Hexagon Social Media QR Stand</h3>
+          <p class="price">KES 2,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Soul Mate Couple Mugs"
+               data-category="valentine"
+               data-price="1500"
+               data-whatsapp-name="Soul Mate Couple Mugs">
+        <div class="product-img-wrap">
+          <img src="images/21.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Soul Mate Couple Mugs</h3>
+          <p class="price">KES 1,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Bamboo Desk Gift Set"
+               data-category="corporate"
+               data-price="5500"
+               data-whatsapp-name="Bamboo Desk Gift Set">
+        <div class="product-img-wrap">
+          <img src="images/22.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Bamboo Desk Gift Set</h3>
+          <p class="price">KES 5,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Black & Gold Resin Wall Clock"
+               data-category="wedding"
+               data-price="9000"
+               data-whatsapp-name="Black & Gold Resin Wall Clock">
+        <div class="product-img-wrap">
+          <img src="images/23.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Black & Gold Resin Wall Clock</h3>
+          <p class="price">KES 9,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Cadbury Silk Chocolate Bouquet"
+               data-category="valentine"
+               data-price="5500"
+               data-whatsapp-name="Cadbury Silk Chocolate Bouquet">
+        <div class="product-img-wrap">
+          <img src="images/25.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Cadbury Silk Chocolate Bouquet</h3>
+          <p class="price">KES 5,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+
+
+      <article class="product-card"
+               data-name="Best Teacher Ever Mug"
+               data-category="thankyou"
+               data-price="850"
+               data-whatsapp-name="Best Teacher Ever Mug">
+        <div class="product-img-wrap">
+          <img src="images/27.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Best Teacher Ever Mug</h3>
+          <p class="price">KES 850</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Luxury Marble & Gold QR Stand"
+               data-category="corporate"
+               data-price="2500"
+               data-whatsapp-name="Luxury Marble & Gold QR Stand">
+        <div class="product-img-wrap">
+          <img src="images/28.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Luxury Marble & Gold QR Stand</h3>
+          <p class="price">KES 2,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Couple Mugs Set"
+               data-category="valentine"
+               data-price="1500"
+               data-whatsapp-name="Couple Mugs Set">
+        <div class="product-img-wrap">
+          <img src="images/29.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Couple Mugs Set</h3>
+          <p class="price">KES 1,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Personalized Valentine's Gift Box"
+               data-category="valentine"
+               data-price="3500"
+               data-whatsapp-name="Personalized Valentine's Gift Box">
+        <div class="product-img-wrap">
+          <img src="images/30.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Personalized Valentine's Gift Box</h3>
+          <p class="price">KES 3,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Custom Wedding Welcome Board"
+               data-category="wedding"
+               data-price="10500"
+               data-whatsapp-name="Custom Wedding Welcome Board">
+        <div class="product-img-wrap">
+          <img src="images/31.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Custom Wedding Welcome Board</h3>
+          <p class="price">KES 10,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Cadbury Explosion Gift Box"
+               data-category="birthday"
+               data-price="12500"
+               data-whatsapp-name="Cadbury Explosion Gift Box">
+        <div class="product-img-wrap">
+          <img src="images/32.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Cadbury Explosion Gift Box</h3>
+          <p class="price">KES 12,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Resin Glitter Bookmark & Keychain Set"
+               data-category="birthday"
+               data-price="1500"
+               data-whatsapp-name="Resin Glitter Bookmark & Keychain Set">
+        <div class="product-img-wrap">
+          <img src="images/33.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Resin Glitter Bookmark & Keychain Set</h3>
+          <p class="price">KES 1,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Bamboo Corporate Gift Set"
+               data-category="corporate"
+               data-price="3500"
+               data-whatsapp-name="Bamboo Corporate Gift Set">
+        <div class="product-img-wrap">
+          <img src="images/34.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Bamboo Corporate Gift Set</h3>
+          <p class="price">KES 3,500(out of stock)</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="product-card"
+               data-name="Floral Resin LED Name Light"
+               data-category="ladies"
+               data-price="3500"
+               data-whatsapp-name="Floral Resin LED Name Light">
+        <div class="product-img-wrap">
+          <img src="images/36.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Floral Resin LED Name Light</h3>
+          <p class="price">KES 3,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Spotify Couple Bracelets"
+               data-category="valentine"
+               data-price="1200"
+               data-whatsapp-name="Classic Black Ceramic Mug">
+        <div class="product-img-wrap">
+          <img src="images/37.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Spotify Couple Bracelets</h3>
+          <p class="price">KES 1,200</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Custom Google Frame Print"
+               data-category="valentine"
+               data-price="1950"
+               data-whatsapp-name="Custom Google Frame Print">
+        <div class="product-img-wrap">
+          <img src="images/38.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Custom Google Frame Print</h3>
+          <p class="price">KES 1,950</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Couple Mugs"
+               data-category="valentine"
+               data-price="1500"
+               data-whatsapp-name="Couple Mugs">
+        <div class="product-img-wrap">
+          <img src="images/39.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Couple Mugs</h3>
+          <p class="price">KES 1,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Personalized Name Water Bottle 500ml"
+               data-category="graduation"
+               data-price="1500"
+               data-whatsapp-name="Personalized Name Water Bottle 500ml">
+        <div class="product-img-wrap">
+          <img src="images/40.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Personalized Name Water Bottle 500ml</h3>
+          <p class="price">KES 1,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Custom Spotify Acrylic Plaque"
+               data-category="valentine"
+               data-price="1750"
+               data-whatsapp-name="Custom Spotify Acrylic Plaque">
+        <div class="product-img-wrap">
+          <img src="images/41.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Custom Spotify Acrylic Plaque</h3>
+          <p class="price">KES 1,750</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Mixed Chocolate Candy Bouquet"
+               data-category="valentine"
+               data-price="7000"
+               data-whatsapp-name="Mixed Chocolate Candy Bouquet">
+        <div class="product-img-wrap">
+          <img src="images/42.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Mixed Chocolate Candy Bouquet</h3>
+          <p class="price">KES 7,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Happy Valentine's Day Mug"
+               data-category="valentine"
+               data-price="850"
+               data-whatsapp-name="Happy Valentine's Day Mug">
+        <div class="product-img-wrap">
+          <img src="images/43.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Happy Valentine's Day Mug</h3>
+          <p class="price">KES 850</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Love Photo Collage Frame"
+               data-category="valentine"
+               data-price="2950"
+               data-whatsapp-name="Love Photo Collage Frame">
+        <div class="product-img-wrap">
+          <img src="images/44.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Love Photo Collage Frame</h3>
+          <p class="price">KES 2,950</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Custom Name Resin Planner Set"
+               data-category="birthday"
+               data-price="2999"
+               data-whatsapp-name="Custom Name Resin Planner Set">
+        <div class="product-img-wrap">
+          <img src="images/46.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Custom Name Resin Planner Set</h3>
+          <p class="price">KES 2,999</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Premium Chocolate & Rose Bouquet"
+               data-category="valentine"
+               data-price="7500"
+               data-whatsapp-name="Premium Chocolate & Rose Bouquet">
+        <div class="product-img-wrap">
+          <img src="images/47.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Premium Chocolate & Rose Bouquet</h3>
+          <p class="price">KES 7,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Custom Script Name Necklace"
+               data-category="ladies"
+               data-price="1000"
+               data-whatsapp-name="Custom Script Name Necklace">
+        <div class="product-img-wrap">
+          <img src="images/48.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Custom Script Name Necklace</h3>
+          <p class="price">KES 1,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Floral Resin LED Name Light"
+               data-category="ladies"
+               data-price="3500"
+               data-whatsapp-name="Floral Resin LED Name Light">
+        <div class="product-img-wrap">
+          <img src="images/49.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Floral Resin LED Name Light</h3>
+          <p class="price">KES 3,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Kinder & KitKat Candy Bouquet"
+               data-category="valentine"
+               data-price="7500"
+               data-whatsapp-name="Kinder & KitKat Candy Bouquet">
+        <div class="product-img-wrap">
+          <img src="images/50.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Kinder & KitKat Candy Bouquet</h3>
+          <p class="price">KES 7,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Wooden Desk Organizer with Clock"
+               data-category="corporate"
+               data-price="5000"
+               data-whatsapp-name="Wooden Desk Organizer with Clock">
+        <div class="product-img-wrap">
+          <img src="images/51.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Wooden Desk Organizer with Clock</h3>
+          <p class="price">KES 5,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Wooden Desk Organizer"
+               data-category="corporate"
+               data-price="5000"
+               data-whatsapp-name="Wooden Desk Organizer">
+        <div class="product-img-wrap">
+          <img src="images/52.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Wooden Desk Organizer</h3>
+          <p class="price">KES 5,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Gold Crushed Stone Resin Clock 40cm"
+               data-category="retirement"
+               data-price="9000"
+               data-whatsapp-name="Gold Crushed Stone Resin Clock 40cm">
+        <div class="product-img-wrap">
+          <img src="images/55.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Gold Crushed Stone Resin Clock 40cm</h3>
+          <p class="price">KES 9,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="2D Round LED Backlit Custom Sign"
+               data-category="corporate"
+               data-price="14000"
+               data-whatsapp-name="2D Round LED Backlit Custom Sign">
+        <div class="product-img-wrap">
+          <img src="images/56.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>2D Round LED Backlit Custom Sign</h3>
+          <p class="price">KES 14,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Square Acrylic Social Media QR Stand"
+               data-category="corporate"
+               data-price="1850"
+               data-whatsapp-name="Square Acrylic Social Media QR Stand">
+        <div class="product-img-wrap">
+          <img src="images/57.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Square Acrylic Social Media QR Stand</h3>
+          <p class="price">KES 1,850</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+
+
+      <article class="product-card"
+               data-name="Couple Necklace Set"
+               data-category="valentine"
+               data-price="3000"
+               data-whatsapp-name="Couple Necklace Set">
+        <div class="product-img-wrap">
+          <img src="images/59.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Couple Necklace Set</h3>
+          <p class="price">KES 3,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Red & Gold Marble Resin Wall Clock"
+               data-category="thankyou"
+               data-price="11000"
+               data-whatsapp-name="Red & Gold Marble Resin Wall Clock">
+        <div class="product-img-wrap">
+          <img src="images/60.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Red & Gold Marble Resin Wall Clock</h3>
+          <p class="price">KES 11,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="King & Queen Couple Necklace Set"
+               data-category="valentine"
+               data-price="3000"
+               data-whatsapp-name="King & Queen Couple Necklace Set">
+        <div class="product-img-wrap">
+          <img src="images/61.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>King & Queen Couple Necklace Set</h3>
+          <p class="price">KES 3,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Cream & Gold Resin Wall Clock"
+               data-category="christmas"
+               data-price="11000"
+               data-whatsapp-name="Cream & Gold Resin Wall Clock">
+        <div class="product-img-wrap">
+          <img src="images/62.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Cream & Gold Resin Wall Clock</h3>
+          <p class="price">KES 11,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Custom Photo & Name Bracelet"
+               data-category="ladies"
+               data-price="1850"
+               data-whatsapp-name="Custom Photo & Name Bracelet">
+        <div class="product-img-wrap">
+          <img src="images/63.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Custom Photo & Name Bracelet</h3>
+          <p class="price">KES 1,850</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Marble & Mirror Luxury Wall Clock"
+               data-category="corporate"
+               data-price="9500"
+               data-whatsapp-name="Marble & Mirror Luxury Wall Clock">
+        <div class="product-img-wrap">
+          <img src="images/64.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Marble & Mirror Luxury Wall Clock</h3>
+          <p class="price">KES 9,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Wooden LED Desk Clock & Pen Holder"
+               data-category="corporate"
+               data-price="2500"
+               data-whatsapp-name="Wooden LED Desk Clock & Pen Holder">
+        <div class="product-img-wrap">
+          <img src="images/65.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Wooden LED Desk Clock & Pen Holder</h3>
+          <p class="price">KES 2,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Purple Amethyst Resin Wall Clock"
+               data-category="retirement"
+               data-price="12000"
+               data-whatsapp-name="Purple Amethyst Resin Wall Clock">
+        <div class="product-img-wrap">
+          <img src="images/66.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Purple Amethyst Resin Wall Clock</h3>
+          <p class="price">KES 12,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Best Brother Ever Mug"
+               data-category="thankyou"
+               data-price="850"
+               data-whatsapp-name="Best Brother Ever Mug">
+        <div class="product-img-wrap">
+          <img src="images/67.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Best Brother Ever Mug</h3>
+          <p class="price">KES 850</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Custom Photo Wall Clock"
+               data-category="anniversary"
+               data-price="5500"
+               data-whatsapp-name="Custom Photo Wall Clock">
+        <div class="product-img-wrap">
+          <img src="images/68.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Custom Photo Wall Clock</h3>
+          <p class="price">KES 5,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Custom Calendar Date Keychain"
+               data-category="anniversary"
+               data-price="500"
+               data-whatsapp-name="Custom Calendar Date Keychain">
+        <div class="product-img-wrap">
+          <img src="images/69.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Custom Calendar Date Keychain</h3>
+          <p class="price">KES 500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Round LED Backlit Business Sign"
+               data-category="corporate"
+               data-price="14000"
+               data-whatsapp-name="Round LED Backlit Business Sign">
+        <div class="product-img-wrap">
+          <img src="images/70.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Round LED Backlit Business Sign</h3>
+          <p class="price">KES 14,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="White & Gold Resin Notebook & Pen Set"
+               data-category="graduation"
+               data-price="2999"
+               data-whatsapp-name="White & Gold Resin Notebook & Pen Set">
+        <div class="product-img-wrap">
+          <img src="images/71.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>White & Gold Resin Notebook & Pen Set</h3>
+          <p class="price">KES 2,999</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Custom Neon Circle Business Sign"
+               data-category="corporate"
+               data-price="14000"
+               data-whatsapp-name="Custom Neon Circle Business Sign">
+        <div class="product-img-wrap">
+          <img src="images/72.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Custom Neon Circle Business Sign</h3>
+          <p class="price">KES 14,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Love You Brother Mug"
+               data-category="thankyou"
+               data-price="850"
+               data-whatsapp-name="Love You Brother Mug">
+        <div class="product-img-wrap">
+          <img src="images/73.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Love You Brother Mug</h3>
+          <p class="price">KES 850</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Birthday Babe Insulated Tumbler"
+               data-category="birthday"
+               data-price="1850"
+               data-whatsapp-name="Birthday Babe Insulated Tumbler">
+        <div class="product-img-wrap">
+          <img src="images/74.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Birthday Babe Insulated Tumbler</h3>
+          <p class="price">KES 1,850 (out of stock)</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Custom Baby Birth Stats LED Frame"
+               data-category="babyshower"
+               data-price="5000"
+               data-whatsapp-name="Custom Baby Birth Stats LED Frame">
+        <div class="product-img-wrap">
+          <img src="images/75.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Custom Baby Birth Stats LED Frame</h3>
+          <p class="price">KES 5,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="product-card"
+               data-name="Pink & Gold Resin Planner Set"
+               data-category="ladies"
+               data-price="2999"
+               data-whatsapp-name="Pink & Gold Resin Planner Set">
+        <div class="product-img-wrap">
+          <img src="images/80.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Pink & Gold Resin Planner Set</h3>
+          <p class="price">KES 2,999</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Google Love Photo Frame"
+               data-category="valentine"
+               data-price="1950"
+               data-whatsapp-name="Classic Black Ceramic Mug">
+        <div class="product-img-wrap">
+          <img src="images/82.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Google Love Photo Frame</h3>
+          <p class="price">KES 1,950</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Round Acrylic Business Logo Sign"
+               data-category="corporate"
+               data-price="14500"
+               data-whatsapp-name="Round Acrylic Business Logo Sign">
+        <div class="product-img-wrap">
+          <img src="images/85.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Round Acrylic Business Logo Sign</h3>
+          <p class="price">KES 14,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Bride Insulated Tumbler"
+               data-category="wedding"
+               data-price="1850"
+               data-whatsapp-name="Bride Insulated Tumbler">
+        <div class="product-img-wrap">
+          <img src="images/86.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Bride Insulated Tumbler</h3>
+          <p class="price">KES 1,850</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Best Boyfriend Ever Mug"
+               data-category="thankyou"
+               data-price="850"
+               data-whatsapp-name="Best Boyfriend Ever Mug">
+        <div class="product-img-wrap">
+          <img src="images/87.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Best Boyfriend Ever Mug</h3>
+          <p class="price">KES 850</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Custom Initials & Date Bar Necklace"
+               data-category="anniversary"
+               data-price="1250"
+               data-whatsapp-name="Custom Initials & Date Bar Necklace">
+        <div class="product-img-wrap">
+          <img src="images/88.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Custom Initials & Date Bar Necklace</h3>
+          <p class="price">KES 1,250</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Pink & Gold Resin Notebook & Pen Set"
+               data-category="thankyou"
+               data-price="2999"
+               data-whatsapp-name="Pink & Gold Resin Notebook & Pen Set">
+        <div class="product-img-wrap">
+          <img src="images/89.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Pink & Gold Resin Notebook & Pen Set</h3>
+          <p class="price">KES 2,999</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Custom Engraved Wooden LED Desk Clock & Pen Holder"
+               data-category="corporate"
+               data-price="2500"
+               data-whatsapp-name="Custom Engraved Wooden LED Desk Clock & Pen Holder">
+        <div class="product-img-wrap">
+          <img src="images/90.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Custom Engraved Wooden LED Desk Clock & Pen Holder</h3>
+          <p class="price">KES 2,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="2D Round LED Backlit Sign"
+               data-category="corporate"
+               data-price="14000"
+               data-whatsapp-name="2D Round LED Backli Sign">
+        <div class="product-img-wrap">
+          <img src="images/91.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>2D Round LED Backlit Sign</h3>
+          <p class="price">KES 14,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Custom Name Couple Bracelet Set"
+               data-category="valentine"
+               data-price="3000"
+               data-whatsapp-name="Custom Name Couple Bracelet Set">
+        <div class="product-img-wrap">
+          <img src="images/94.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Custom Name Couple Bracelet Set</h3>
+          <p class="price">KES 3,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Graphic Hoodie"
+               data-category="christmas"
+               data-price="3000"
+               data-whatsapp-name="Graphic Hoodie">
+        <div class="product-img-wrap">
+          <img src="images/96.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Graphic Hoodie</h3>
+          <p class="price">KES 3,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Graphic T-Shirt"
+               data-category="ladies"
+               data-price="1500"
+               data-whatsapp-name="Graphic T-Shirt">
+        <div class="product-img-wrap">
+          <img src="images/99.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Graphic T-Shirt</h3>
+          <p class="price">KES 1,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Heart-Shaped Resin Couple Photo Frame"
+               data-category="wedding"
+               data-price="4500"
+               data-whatsapp-name="Heart-Shaped Resin Couple Photo Frame">
+        <div class="product-img-wrap">
+          <img src="images/101.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Heart-Shaped Resin Couple Photo Frame</h3>
+          <p class="price">KES 4,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Baby Birth Stats Heart Resin Keepsake"
+               data-category="baby"
+               data-price="4500"
+               data-whatsapp-name="Baby Birth Stats Heart Resin Keepsake">
+        <div class="product-img-wrap">
+          <img src="images/102.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Baby Birth Stats Heart Resin Keepsake</h3>
+          <p class="price">KES 4,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Luxury Wedding Invitation Set"
+               data-category="wedding"
+               data-price="400"
+               data-whatsapp-name="Luxury Wedding Invitation Set">
+        <div class="product-img-wrap">
+          <img src="images/103.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Luxury Wedding Invitation Set</h3>
+          <p class="price">KES 400 each (min 50)</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Wooden Baby Birth Stats Clock Plaque"
+               data-category="baby"
+               data-price="5500"
+               data-whatsapp-name="Wooden Baby Birth Stats Clock Plaque">
+        <div class="product-img-wrap">
+          <img src="images/104.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Wooden Baby Birth Stats Clock Plaque</h3>
+          <p class="price">KES 5,500 (out of stock)</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Wooden Baby Announcement Board"
+               data-category="baby"
+               data-price="1950"
+               data-whatsapp-name="Wooden Baby Announcement Board">
+        <div class="product-img-wrap">
+          <img src="images/105.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Wooden Baby Announcement Board</h3>
+          <p class="price">KES 1,950</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Invitation Card"
+               data-category="graduation"
+               data-price="5000"
+               data-whatsapp-name="Invitation Card">
+        <div class="product-img-wrap">
+          <img src="images/108.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Invitation Card</h3>
+          <p class="price">KES 400 each (MOQ 50)</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="insulated tumbler"
+               data-category="thankyou"
+               data-price="1850"
+               data-whatsapp-name="insulated tumbler">
+        <div class="product-img-wrap">
+          <img src="images/110.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>insulated tumbler</h3>
+          <p class="price">KES 1,850</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Mom Gift Plaque"
+               data-category="ladies"
+               data-price="2950"
+               data-whatsapp-name="Mom Gift Plaque">
+        <div class="product-img-wrap">
+          <img src="images/112.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Mom Gift Plaque</h3>
+          <p class="price">KES 2,950</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="One year Baby Milestone (sizeA2)"
+               data-category="baby"
+               data-price="8500"
+               data-whatsapp-name="One year Baby Milestone (sizeA2)">
+        <div class="product-img-wrap">
+          <img src="images/113.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>One year Baby Milestone (sizeA2)</h3>
+          <p class="price">KES 8,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Customized Journal"
+               data-category="retirement"
+               data-price="2500"
+               data-whatsapp-name="Customized Journal">
+        <div class="product-img-wrap">
+          <img src="images/114.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Customized Journal</h3>
+          <p class="price">KES 2,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Customized Family Wall Clock"
+               data-category="christmas"
+               data-price="9500"
+               data-whatsapp-name="Customized Family Wall Clock">
+        <div class="product-img-wrap">
+          <img src="images/115.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Customized Family Wall Clock</h3>
+          <p class="price">KES 9,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Photo Keepsake Wall Clock"
+               data-category="anniversary"
+               data-price="5500"
+               data-whatsapp-name="Photo Keepsake Wall Clock">
+        <div class="product-img-wrap">
+          <img src="images/117.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Photo Keepsake Wall Clock</h3>
+          <p class="price">KES 5,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Customized Water Bottle 750ml"
+               data-category="retirement"
+               data-price="1950"
+               data-whatsapp-name="Customized Water Bottle 750ml">
+        <div class="product-img-wrap">
+          <img src="images/118.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Customized Water Bottle 750ml</h3>
+          <p class="price">KES 1,950</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="One Year Baby Milestone A1"
+               data-category="baby"
+               data-price="11500"
+               data-whatsapp-name="One Year Baby Milestone A1">
+        <div class="product-img-wrap">
+          <img src="images/119.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>One Year Baby Milestone A1</h3>
+          <p class="price">KES 11,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Personalized Engraved Name Bracelet"
+               data-category="anniversary"
+               data-price="1500"
+               data-whatsapp-name="Personalized Engraved Name Bracelet">
+        <div class="product-img-wrap">
+          <img src="images/120.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Personalized Engraved Name Bracelet</h3>
+          <p class="price">KES 1,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Mom Wooden Gift Plaque"
+               data-category="ladies"
+               data-price="2950"
+               data-whatsapp-name="Mom Wooden Gift Plaque">
+        <div class="product-img-wrap">
+          <img src="images/121.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Mom Wooden Gift Plaque</h3>
+          <p class="price">KES 2,950</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Plain Hoodie"
+               data-category="thankyou"
+               data-price="2000"
+               data-whatsapp-name="Plain Hoodie">
+        <div class="product-img-wrap">
+          <img src="images/125.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Plain Hoodie</h3>
+          <p class="price">KES 2,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Customized Mothers Day Mug"
+               data-category="ladies"
+               data-price="850"
+               data-whatsapp-name="Customized Mothers Day Mug">
+        <div class="product-img-wrap">
+          <img src="images/126.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Customized Mothers Day Mug</h3>
+          <p class="price">KES 850</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="3D Wooden World Map Wall Art"
+               data-category="men"
+               data-price="35000"
+               data-whatsapp-name="3D Wooden World Map Wall Art">
+        <div class="product-img-wrap">
+          <img src="images/127.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>3D Wooden World Map Wall Art</h3>
+          <p class="price">KES 35,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Customized Sweatshirt"
+               data-category="men"
+               data-price="2500"
+               data-whatsapp-name="Customized Sweatshirt">
+        <div class="product-img-wrap">
+          <img src="images/132.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Customized Sweatshirt</h3>
+          <p class="price">KES 2,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Customized Family Wall Clock"
+               data-category="christmas"
+               data-price="9500"
+               data-whatsapp-name="Customized Family Wall Clock">
+        <div class="product-img-wrap">
+          <img src="images/133.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Customized Family Wall Clock</h3>
+          <p class="price">KES 9,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Custom Clear Acrylic Invitation Card"
+               data-category="graduation"
+               data-price="5000"
+               data-whatsapp-name="Custom Clear Acrylic Invitation Card">
+        <div class="product-img-wrap">
+          <img src="images/136.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Custom Clear Acrylic Invitation Card</h3>
+          <p class="price">KES 400 each (MOQ=50)</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Customized Stanley Cup"
+               data-category="ladies"
+               data-price="2000"
+               data-whatsapp-name="Customized Stanley Cup">
+        <div class="product-img-wrap">
+          <img src="images/137.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Customized Stanley Cup</h3>
+          <p class="price">KES 2,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Personalized Baby Birth Keepsake Plaque"
+               data-category="baby"
+               data-price="4000"
+               data-whatsapp-name="Personalized Baby Birth Keepsake Plaque">
+        <div class="product-img-wrap">
+          <img src="images/139.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Personalized Baby Birth Keepsake Plaque</h3>
+          <p class="price">KES 4,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Personalized Resin Notebook"
+               data-category="christmas"
+               data-price="2500"
+               data-whatsapp-name="Personalized Resin Notebook">
+        <div class="product-img-wrap">
+          <img src="images/141.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Personalized Resin Notebook</h3>
+          <p class="price">KES 2,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="product-card"
+               data-name="Heart-Shaped Photo Keepsake (small)"
+               data-category="christmas"
+               data-price="2500"
+               data-whatsapp-name="Heart-Shaped Photo Keepsake (small)">
+        <div class="product-img-wrap">
+          <img src="images/143.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Heart-Shaped Photo Keepsake (small)</h3>
+          <p class="price">KES 2,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Custom Bracelet"
+               data-category="ladies"
+               data-price="1500"
+               data-whatsapp-name="Custom Bracelet">
+        <div class="product-img-wrap">
+          <img src="images/144.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Custom Bracelet</h3>
+          <p class="price">KES 1,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Custom Invitation Card"
+               data-category="birthday"
+               data-price="400"
+               data-whatsapp-name="Custom Invitation Card">
+        <div class="product-img-wrap">
+          <img src="images/145.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Custom Invitation Card (MOQ=50)</h3>
+          <p class="price">KES 400</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="product-card"
+               data-name="Customized Hoodie"
+               data-category="christmas"
+               data-price="3000"
+               data-whatsapp-name="Customized Hoodie">
+        <div class="product-img-wrap">
+          <img src="images/147.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Customized Hoodie</h3>
+          <p class="price">KES 3,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="product-card"
+               data-name="Customized T-Shirt"
+               data-category="christmas"
+               data-price="1500"
+               data-whatsapp-name="Customized T-Shirt">
+        <div class="product-img-wrap">
+          <img src="images/153.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Customized T-Shirt</h3>
+          <p class="price">KES 1,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Custom Family Name Keepsake"
+               data-category="christmas"
+               data-price="2850"
+               data-whatsapp-name="Custom Family Name Keepsake">
+        <div class="product-img-wrap">
+          <img src="images/154.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Custom Family Name Keepsake</h3>
+          <p class="price">KES 2,850</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Custom Couples Bracelet"
+               data-category="valentine"
+               data-price="1500"
+               data-whatsapp-name="Custom Couples Bracelet">
+        <div class="product-img-wrap">
+          <img src="images/157.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Custom Couples Bracelet</h3>
+          <p class="price">KES 1,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="LED Mirror Wall Clock"
+               data-category="retirement"
+               data-price="9500"
+               data-whatsapp-name="LED Mirror Wall Clock">
+        <div class="product-img-wrap">
+          <img src="images/158.jpeg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>LED Mirror Wall Clock</h3>
+          <p class="price">KES 9,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="product-card"
+               data-name="Personalized Stationery Gift Set"
+               data-category="ladies"
+               data-price="1500"
+               data-whatsapp-name="Personalized Stationery Gift Set">
+        <div class="product-img-wrap">
+          <img src="images/161.jpeg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Personalized Stationery Gift Set</h3>
+          <p class="price">KES 1,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Jersey Frame (A3)"
+               data-category="men"
+               data-price="5500"
+               data-whatsapp-name="Jersey Frame (A3)">
+        <div class="product-img-wrap">
+          <img src="images/162.jpeg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Jersey Frame (A3)</h3>
+          <p class="price">KES 5,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Men's Premium Timepiece Gift Set"
+               data-category="men"
+               data-price="8500"
+               data-whatsapp-name="Men's Premium Timepiece Gift Set">
+        <div class="product-img-wrap">
+          <img src="images/167.jpeg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Men's Premium Timepiece Gift Set</h3>
+          <p class="price">KES 8,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Spotify Key Holder"
+               data-category="ladies"
+               data-price="500"
+               data-whatsapp-name="Spotify Key Holder">
+        <div class="product-img-wrap">
+          <img src="images/168.jpeg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Spotify Key Holder</h3>
+          <p class="price">KES 500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Executive Wallet & Pen Gift Set"
+               data-category="men"
+               data-price="2850"
+               data-whatsapp-name="Executive Wallet & Pen Gift Set">
+        <div class="product-img-wrap">
+          <img src="images/169.jpeg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Executive Wallet & Pen Gift Set</h3>
+          <p class="price">KES 2,850</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Pink Summer Essentials Gift Box"
+               data-category="ladies"
+               data-price="4500"
+               data-whatsapp-name="Pink Summer Essentials Gift Box">
+        <div class="product-img-wrap">
+          <img src="images/171.jpeg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Pink Summer Essentials Gift Box</h3>
+          <p class="price">KES 4,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+
+            <article class="product-card"
+               data-name="Custom Jersey Frame (A2)"
+               data-category="men"
+               data-price="7500"
+               data-whatsapp-name="Custom Jersey Frame (A2)">
+        <div class="product-img-wrap">
+          <img src="images/175.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Custom Jersey Frame (A2)</h3>
+          <p class="price">KES 7,500</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="Couples Plaque"
+               data-category=""
+               data-price="5000"
+               data-whatsapp-name="Couples Plaque">
+        <div class="product-img-wrap">
+          <img src="images/172.jpeg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Couples Plaque</h3>
+          <p class="price">KES 5,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card"
+               data-name="social media plaque"
+               data-category="corporate"
+               data-price="1900"
+               data-whatsapp-name="social media plaque">
+        <div class="product-img-wrap">
+          <img src="images/2.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>social media plaque</h3>
+          <p class="price">KES 1,900</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+<article class="product-card"
+               data-name="Custom Jersey Frame"
+               data-category="men"
+               data-price="10000"
+               data-whatsapp-name="Custom Jersey Frame">
+        <div class="product-img-wrap">
+          <img src="images/176.jpg" alt="Couple Love Memory Box" loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/e53935/ffffff?text=💕+Memory+Box'" />
+        </div>
+        <div class="product-info">
+          <h3>Custom Jersey Frame</h3>
+          <p class="price">KES 10,000</p>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="addToCart(this)" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp('Couple Love Memory Box', 5000)" aria-label="Order on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+
+
+
+
+      
+
+
+      <!-- ↑↑↑ PASTE NEW PRODUCTS ABOVE THIS LINE ↑↑↑ -->
+
+    </div><!-- end products-grid -->
+  </section>
+
+  <!-- ===================== CART SIDEBAR ===================== -->
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+  <aside class="cart-sidebar" id="cartSidebar" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-header">
+      <h2><i class="fa-solid fa-bag-shopping"></i> Your Cart</h2>
+      <button class="cart-close" id="cartClose" aria-label="Close cart">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <i class="fa-solid fa-box-open"></i>
+        <p>Your cart is empty</p>
+        <a href="#products" class="btn btn-primary" onclick="closeCart()">Start Shopping</a>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total">
+        <span>Total:</span>
+        <strong id="cartTotal">KES 0</strong>
+      </div>
+      <button class="btn btn-primary btn-block" onclick="checkoutWhatsApp()">
+        <i class="fa-brands fa-whatsapp"></i> Checkout via WhatsApp
+      </button>
+      <button class="btn btn-outline btn-block" onclick="clearCart()">
+        <i class="fa-solid fa-trash"></i> Clear Cart
+      </button>
+    </div>
+  </aside>
+
+  <!-- ===================== FLOATING WHATSAPP (RIGHT SIDE) ===================== -->
+  <a href="https://wa.me/254769588227?text=Hello%20SamGifts%2C%20I%27d%20like%20to%20inquire%20about%20your%20gifts!"
+     class="floating-whatsapp"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="whatsapp-tooltip">Chat with us!</span>
+  </a>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="footer-top">
+      <div class="footer-col brand-col">
+        <a href="#" class="footer-logo">
+          <i class="fa-solid fa-gift"></i> Sam<strong>Gifts</strong>
+        </a>
+        <p>We help you give moments that last a lifetime. Thoughtful gifts for every occasion, delivered to your door.</p>
+        <div class="social-links" aria-label="Social media links">
+          <a href="https://facebook.com/profile.php?id=61567643093548" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://instagram.com/samgift_shop" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://tiktok.com/@samcapturedmoments" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#products">Shop</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col" id="contact">
+        <h3>Contact Us</h3>
+        <ul class="contact-list">
+          <li><i class="fa-solid fa-location-dot"></i> Hazina Trade Center, Nairobi</li>
+          <li><i class="fa-solid fa-phone"></i> +254 769 588 227</li>
+          <li><i class="fa-solid fa-envelope"></i>samgifts254@gmail.com</li>
+          <li>
+            <a href="https://wa.me/254769588227" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter-col">
+        <h3>Stay in the Loop</h3>
+        <p>Get exclusive deals & gift inspiration straight to your inbox.</p>
+        <form class="newsletter-form" onsubmit="subscribeNewsletter(event)" aria-label="Newsletter signup">
+          <input type="email" placeholder="your@email.com" required aria-label="Email address" />
+          <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+        <p class="newsletter-note" id="newsletterMsg"></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2022 SamGifts. All rights reserved. Made with <i class="fa-solid fa-heart"></i> in Kenya.</p>
+      <div class="footer-bottom-links">
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="app.js"></script>
+</body>
+</html>
