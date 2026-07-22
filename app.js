@@ -10,7 +10,7 @@
 /* ─── WhatsApp Number ───────────────────────────────────────
    WhatsApp number ( Example: 254712345678
    ─────────────────────────────────────────────────────────── */
-const WHATSAPP_NUMBER = "254769588227";
+const WHATSAPP_NUMBER = "254705707852";
 
 /* ─── Cart State ────────────────────────────────────────────
    Cart is an array of objects: { id, name, price, qty }
