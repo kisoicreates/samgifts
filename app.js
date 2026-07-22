@@ -248,7 +248,6 @@ function clearCategoryFilter(showAll = true) {
  * @param {number} price       — price as a number
  */
 function orderOnWhatsApp(button) {
-  // Find the product card containing the clicked WhatsApp button
   const card = button.closest(".product-card");
 
   if (!card) {
@@ -256,29 +255,22 @@ function orderOnWhatsApp(button) {
     return;
   }
 
-  // Get product information directly from the product card
   const productName =
     card.dataset.whatsappName ||
     card.dataset.name ||
     card.querySelector("h3")?.textContent.trim() ||
     "Unknown Product";
 
-  // Get price from data-price
   const price = Number(
     String(card.dataset.price || "0").replace(/,/g, "")
   );
 
-  // Get product image
-  const image = card.querySelector("img")?.getAttribute("src") || "";
-
-  // Build WhatsApp message
   const message =
     `Hello SamGifts, I would like to order:\n\n` +
     `*${productName}*\n` +
     `Price: KES ${price.toLocaleString()}\n\n` +
     `Please confirm availability and delivery details. Thank you!`;
 
-  // Open WhatsApp
   const url =
     `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
