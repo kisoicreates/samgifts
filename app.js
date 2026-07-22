@@ -248,33 +248,62 @@ function clearCategoryFilter(showAll = true) {
  * @param {number} price       — price as a number
  */
 function orderOnWhatsApp(button) {
-  const card = button.closest(".product-card");
+  try {
+    // Find the product card containing the clicked button
+    const productCard = button.closest(".product-card");
 
-  if (!card) {
-    console.error("Product card not found.");
-    return;
+    if (!productCard) {
+      alert("Unable to identify this product. Please try again.");
+      return;
+    }
+
+    // Get product name
+    const nameElement = productCard.querySelector("h3");
+
+    if (!nameElement) {
+      alert("Product name could not be found.");
+      return;
+    }
+
+    const productName = nameElement.textContent.trim();
+
+    // Get product price
+    let productPrice = productCard.dataset.price || "0";
+
+    // Remove commas and convert to number
+    productPrice = Number(
+      String(productPrice).replace(/,/g, "")
+    );
+
+    // Check price
+    if (isNaN(productPrice)) {
+      productPrice = 0;
+    }
+
+    // Your WhatsApp number
+    const phoneNumber = WHATSAPP_NUMBER;
+
+    // Create WhatsApp message
+    const message =
+      `Hello SamGifts, I would like to order:\n\n` +
+      `Product: ${productName}\n` +
+      `Price: KES ${productPrice.toLocaleString()}\n\n` +
+      `Please confirm availability and delivery details. Thank you!`;
+
+    // Encode message
+    const encodedMessage = encodeURIComponent(message);
+
+    // Create WhatsApp URL
+    const whatsappURL =
+      `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    // Open WhatsApp
+    window.open(whatsappURL, "_blank");
+
+  } catch (error) {
+    console.error("WhatsApp order error:", error);
+    alert("Unable to open WhatsApp. Please try again.");
   }
-
-  const productName =
-    card.dataset.whatsappName ||
-    card.dataset.name ||
-    card.querySelector("h3")?.textContent.trim() ||
-    "Unknown Product";
-
-  const price = Number(
-    String(card.dataset.price || "0").replace(/,/g, "")
-  );
-
-  const message =
-    `Hello SamGifts, I would like to order:\n\n` +
-    `*${productName}*\n` +
-    `Price: KES ${price.toLocaleString()}\n\n` +
-    `Please confirm availability and delivery details. Thank you!`;
-
-  const url =
-    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-
-  window.open(url, "_blank", "noopener,noreferrer");
 }
 
 /* ===========================================================
